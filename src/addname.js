@@ -4,8 +4,10 @@ const displayName = document.querySelector('#pet-name');
 
 addName.addEventListener('click', (event) => {
 
-    const pet = new Pet(inputName.value);
+    pet = new Pet(inputName.value);
     displayName.innerHTML = pet.name;
+    controller = new Controller (pet);
+    // controller.checkUp();
 
     event.preventDefault();
 });

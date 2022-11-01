@@ -1,26 +1,43 @@
 (function exportController () {   
-    function Controller (name) {
-        this.name = name;
-        this.initialisePet();
+    function Controller (pet) {
+        this.pet = pet;
 
         document.querySelector('#grow-button').addEventListener('click', () => {
             this.growUp();
         });
-        document.querySelector('#feed-button').addEventListener('click', () => {
-            this.feed();
-        });
-        document.querySelector('#walk-button').addEventListener('click', () => {
-            this.walk();
-        });
+        // document.querySelector('#feed-button').addEventListener('click', () => {
+        //     this.feed();
+        // });
+        // document.querySelector('#walk-button').addEventListener('click', () => {
+        //     this.walk();
+        // });
     };
 
     Controller.prototype = {
-        initialisePet() {
+        // initialisePet() {
+        //     const age = document.querySelector('#pet-age');
+        //     age.value
+        // },
+        growUp() {
 
+            pet.growUp();
+            const currentAge = document.querySelector("#pet-age");
+            const currentHunger = document.querySelector("#pet-hunger");
+            const currentFitness = document.querySelector("#pet-fitness");
+
+            currentAge.value = pet.age;
+            currentHunger.value = pet.hunger;
+            currentFitness.value = pet.fitness;
         },
-        XXXX() {
+        // feed() {
 
-        }
+        // },
+        // walk() {
+
+        // },
+        // checkUp() {
+
+        // }
     };
 
     if (typeof module !== 'undefined' && module.exports) {
