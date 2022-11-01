@@ -7,7 +7,6 @@ addName.addEventListener('click', (event) => {
     pet = new Pet(inputName.value);
     displayName.innerHTML = pet.name;
     controller = new Controller (pet);
-    // controller.checkUp();
 
     event.preventDefault();
 });

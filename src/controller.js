@@ -5,12 +5,12 @@
         document.querySelector('#grow-button').addEventListener('click', () => {
             this.growUp();
         });
-        // document.querySelector('#feed-button').addEventListener('click', () => {
-        //     this.feed();
-        // });
-        // document.querySelector('#walk-button').addEventListener('click', () => {
-        //     this.walk();
-        // });
+        document.querySelector('#feed-button').addEventListener('click', () => {
+            this.feed();
+        });
+        document.querySelector('#walk-button').addEventListener('click', () => {
+            this.walk();
+        });
     };
 
     Controller.prototype = {
@@ -19,8 +19,7 @@
         //     age.value
         // },
         growUp() {
-
-            pet.growUp();
+            this.pet.growUp();
             const currentAge = document.querySelector("#pet-age");
             const currentHunger = document.querySelector("#pet-hunger");
             const currentFitness = document.querySelector("#pet-fitness");
@@ -28,16 +27,36 @@
             currentAge.value = pet.age;
             currentHunger.value = pet.hunger;
             currentFitness.value = pet.fitness;
+
+            this.checkUp();
         },
-        // feed() {
+        feed() {
+            this.pet.feed();
+            const currentAge = document.querySelector("#pet-age");
+            const currentHunger = document.querySelector("#pet-hunger");
+            const currentFitness = document.querySelector("#pet-fitness");
 
-        // },
-        // walk() {
+            currentAge.value = pet.age;
+            currentHunger.value = pet.hunger;
+            currentFitness.value = pet.fitness;
+            
+            this.checkUp();
+        },
+        walk() {
+            this.pet.walk();
+            const currentAge = document.querySelector("#pet-age");
+            const currentHunger = document.querySelector("#pet-hunger");
+            const currentFitness = document.querySelector("#pet-fitness");
 
-        // },
-        // checkUp() {
-
-        // }
+            currentAge.value = pet.age;
+            currentHunger.value = pet.hunger;
+            currentFitness.value = pet.fitness;
+            
+            this.checkUp();
+        },
+        checkUp() {
+            document.querySelector("#checkup-message").innerHTML = this.pet.checkUp();
+        }
     };
 
     if (typeof module !== 'undefined' && module.exports) {
