@@ -1,0 +1,99 @@
+html {
+    font-size: 14px;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #EF6D6D;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+}
+  
+
+.dashboard {
+    padding: 2rem;
+    width: 40rem;
+    margin: 0 auto;
+    border-radius: 2rem;
+    position: relative;
+    background: white;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
+}
+
+h1 {
+    width: calc(100% + 4rem);
+    margin: -2rem 0 2rem -2rem;
+    padding: .5rem;
+    background: #573391;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 100;
+    font-family: 'Jua', sans-serif;
+    text-shadow: 3px 3px 0 #EF6D6D;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+}
+
+.name h3 {
+    padding-right: 1rem;
+}
+
+.name button {
+    margin-left: 1rem;
+}
+
+.state meter {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    
+}
+
+.control-panel{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.control-panel button {
+    margin: 2px;
+}
+
+.cat-image {
+    margin: auto;
+    width: 224px;
+    height: 256px;
+    background-image: url('../images/cat_kiss_heart_static.png');
+    background-size: 100%;
+}
+
+.cat-image:hover {
+    background-image: url('../images/cat_kiss_heart.gif');
+}
+
+button {
+    background: #ffc600;
+    border: 2px solid #F3C010;
+    width: 20%;
+    float: left; 
+    cursor: pointer;
+    position: relative;
+}
+
+button:active {
+    top: 2px;
+}
+  
+/* button:nth-of-type(1) {
+    margin-right: 2%;
+} */
+  

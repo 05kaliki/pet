@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Virtual Pet</title>
+</head>
+<body>
+    <div class="dashboard">
+        <h1>🐶 Virtual Pet 🐱</h1>
+
+        <div class="name">
+            <h3>Pet's name</h3>
+            <input type="text" name="name-input" id="name-input" placeholder="Name" required />
+            <button type="button" id="name-button">Add</button>
+        </div>
+        <hr>
+        <br>
+        <div class="state">
+            <label for="pet-name">Name : </label>
+            <span id="pet-name">This is test. </span>
+            <br>
+            <br>
+            <label for="pet-age">Age : </label>
+            <meter id="pet-age" value="10" min="0" max="30">10 out of 30</meter>
+            <br>
+            <label for="pet-hunger">Hunger : </label>
+            <meter id="pet-hunger" value="8" min="0" max="10">8 out of 10</meter>
+            <br>
+            <label for="pet-fitness">Fitness : </label>
+            <meter id="pet-fitness" value="4" min="0" max="40">4 out of 40</meter>
+            <br>
+            <br>
+            <label for="pet-checkup">Check up : </label>
+            <span id="checkup-message">This is test message. </span>
+            <br>
+            <br>
+        </div>
+        <hr>
+
+
+        <div class="control-panel">
+            <h3>Looking after your pet</h3>
+            <button type="button" id="grow-button">Grow up</button>
+            <button type="button" id="feed-button">Feed me</button>
+            <button type="button" id="walk-button">Walk me</button>
+            <br>
+        </div>
+        <div class="cat-image"></div>
+  
+    </div>
+
+
+
+    <script src="src/pet.js"></script>
+    <script>
+        
+    </script>
+</body>
+</html>
