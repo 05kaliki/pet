@@ -28,6 +28,8 @@
             currentHunger.value = pet.hunger;
             currentFitness.value = pet.fitness;
 
+            document.querySelector("#pet-age-value").innerHTML = pet.age;
+
             this.checkUp();
         },
         feed() {

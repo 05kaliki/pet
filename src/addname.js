@@ -13,6 +13,7 @@ addName.addEventListener('click', (event) => {
     currentFitness.value = pet.fitness;
 
     displayName.innerHTML = pet.name;
+    document.querySelector("#pet-age-value").innerHTML = pet.age;
     controller = new Controller (pet);
     controller.checkUp();
 
@@ -20,5 +21,5 @@ addName.addEventListener('click', (event) => {
 });
 
 // to do: 
-// perhaps showing the numbers for the stats. not sure where
+// low and high set up for meters
 // having child as well
