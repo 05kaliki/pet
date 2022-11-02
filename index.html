@@ -26,16 +26,19 @@
             <span id="pet-name"></span>
             <br>
             <br>
-            <p><label for="pet-age">Age : </label>
-                <span id="pet-age-value"></span>
-                <meter id="pet-age" value="0" min="0" max="30"></meter>
-            </p>
+            <label for="pet-age">Age : </label>
+            <span id="pet-age-value"></span>
+            <meter id="pet-age" value="0" min="0" max="30"></meter>
+            <br>
             <br>
             <label for="pet-hunger">Hunger : </label>
-            <meter id="pet-hunger" value="0" min="0" max="10"></meter>
+            <span id="pet-hunger-value"></span>
+            <meter id="pet-hunger" value="0" min="0" max="10" high="5" ></meter>
+            <br>
             <br>
             <label for="pet-fitness">Fitness : </label>
-            <meter id="pet-fitness" value="10" min="0" max="10">0</meter>
+            <span id="pet-fitness-value"></span>
+            <meter id="pet-fitness" value="10" min="0" max="10" low="4" >0</meter>
             <br>
             <br>
             <label for="pet-checkup">Check up : </label>
@@ -57,16 +60,12 @@
   
     </div>
 
-
-
     <script src="src/addname.js"></script>
     <script src="src/pet.js"></script>
     <script src="src/controller.js"></script>
     <script>
         let pet;
         let controller;
-
-
     </script>
 </body>
 </html>
