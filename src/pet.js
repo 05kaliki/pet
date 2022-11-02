@@ -54,7 +54,7 @@ const MINIMUM_HUNGER = 0;
             } else if (this.fitness <= 3) {
                 return 'I need a walk';
             } else if (this.age == 0) {
-                return 'Hello! :)';
+                return 'Hello! (ᵔᴥᵔ)';
             } else {
                 return 'I feel great!';
             };
