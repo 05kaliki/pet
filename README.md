@@ -1,10 +1,10 @@
-# VirtualPet
+# VirtualPet with GUI
 
 (ᵔᴥᵔ) ʕ•ᴥ•ʔ （・⊝・） (=^ェ^=) 
 
 ## About
 
-Creating virtual pets using JavaScript. 
+Creating virtual pets using JavaScript, HTML and CSS. 
 As part of the Manchester Codes curriculum for utilising OOP.
 
 ## How to use
