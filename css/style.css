@@ -52,7 +52,7 @@ h1 {
 }
 
 
-.state span {
+#pet-name, #checkup-message {
     font-size: 1.5rem;
     font-family: 'Jua', sans-serif;
 }

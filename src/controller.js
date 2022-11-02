@@ -14,12 +14,19 @@
     };
 
     Controller.prototype = {
-        // initialisePet() {
-        //     const age = document.querySelector('#pet-age');
-        //     age.value
-        // },
         growUp() {
             this.pet.growUp();
+            this.meterValue();
+        },
+        feed() {
+            this.pet.feed();
+            this.meterValue();
+        },
+        walk() {
+            this.pet.walk();
+            this.meterValue();
+        },
+        meterValue() {
             const currentAge = document.querySelector("#pet-age");
             const currentHunger = document.querySelector("#pet-hunger");
             const currentFitness = document.querySelector("#pet-fitness");
@@ -29,34 +36,8 @@
             currentFitness.value = pet.fitness;
 
             document.querySelector("#pet-age-value").innerHTML = pet.age;
-
-            this.checkUp();
-        },
-        feed() {
-            this.pet.feed();
-            const currentAge = document.querySelector("#pet-age");
-            const currentHunger = document.querySelector("#pet-hunger");
-            const currentFitness = document.querySelector("#pet-fitness");
-
-            currentAge.value = pet.age;
-            currentHunger.value = pet.hunger;
-            currentFitness.value = pet.fitness;
-            
-            this.checkUp();
-        },
-        walk() {
-            this.pet.walk();
-            const currentAge = document.querySelector("#pet-age");
-            const currentHunger = document.querySelector("#pet-hunger");
-            const currentFitness = document.querySelector("#pet-fitness");
-
-            currentAge.value = pet.age;
-            currentHunger.value = pet.hunger;
-            currentFitness.value = pet.fitness;
-            
-            this.checkUp();
-        },
-        checkUp() {
+            document.querySelector("#pet-hunger-value").innerHTML = pet.hunger;
+            document.querySelector("#pet-fitness-value").innerHTML = pet.fitness;
             document.querySelector("#checkup-message").innerHTML = this.pet.checkUp();
         }
     };
