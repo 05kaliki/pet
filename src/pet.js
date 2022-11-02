@@ -53,6 +53,8 @@ const MINIMUM_HUNGER = 0;
                 return 'I am hungry';
             } else if (this.fitness <= 3) {
                 return 'I need a walk';
+            } else if (this.age == 0) {
+                return 'Hello! :)';
             } else {
                 return 'I feel great!';
             };
