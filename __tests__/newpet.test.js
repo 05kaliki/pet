@@ -284,7 +284,7 @@ describe('growUp, walk, feed, checkUp, isAlive, adoptChild and haveBaby', () => 
         });
     
         it('when a dead pet adopts a child, throw an error', () => {
-            pet.age = 30;
+            pet.age = MAXIMUM_AGE;
             
             expect(() => pet.haveBaby('Congi')).toThrow('Your pet is no longer alive :(');
         });
