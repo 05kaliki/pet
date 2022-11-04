@@ -27,17 +27,15 @@
             this.meterValue();
         },
         meterValue() {
-            const currentAge = document.querySelector("#pet-age");
-            const currentHunger = document.querySelector("#pet-hunger");
-            const currentFitness = document.querySelector("#pet-fitness");
 
-            currentAge.value = pet.age;
-            currentHunger.value = pet.hunger;
-            currentFitness.value = pet.fitness;
+            document.querySelector("#pet-age").value = pet.age;
+            document.querySelector("#pet-hunger").value = pet.hunger;
+            document.querySelector("#pet-fitness").value = pet.fitness;
 
             document.querySelector("#pet-age-value").innerHTML = pet.age;
             document.querySelector("#pet-hunger-value").innerHTML = pet.hunger;
             document.querySelector("#pet-fitness-value").innerHTML = pet.fitness;
+            
             document.querySelector("#checkup-message").innerHTML = this.pet.checkUp();
         }
     };
