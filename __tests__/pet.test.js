@@ -125,10 +125,18 @@ describe('checkUp', () => {
         expect(pet.checkUp()).toBe('I am hungry AND I need a walk');
     });
 
-    it('if both of the above are true, return "I feel great!"', () => {
+    it('when Pet initiated and age is 0, return "Hello! (ᵔᴥᵔ)"', () => {
+        const pet = new Pet('Fido');
+        pet.checkUp();
+
+        expect(pet.checkUp()).toBe('Hello! (ᵔᴥᵔ)');
+    });
+
+    it('if not hugry, no need to walk and age is not 0, return "I feel great!"', () => {
         const pet = new Pet('Fido');
         pet.fitness = 5;
         pet.hunger = 3;
+        pet.age = 1;
         pet.checkUp();
 
         expect(pet.checkUp()).toBe('I feel great!');
