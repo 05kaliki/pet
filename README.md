@@ -1,33 +1,22 @@
-# VirtualPet with GUI
+# 🐩 Virtual Pet 🐕
 
-(ᵔᴥᵔ) ʕ•ᴥ•ʔ （・⊝・） (=^ェ^=) 
+A simple app version of the JavaScript virtual pet that was previously created (https://github.com/cocomarine/virtual-pet). Built using HTML, CSS and JavaScript Document Object Model (DOM) manipulation. 
 
-## About
-
-Creating virtual pets using JavaScript, HTML and CSS. 
-As part of the Manchester Codes curriculum for utilising OOP.
-
-## How to use
+## Description
+The aim of the game is to create pets and keep them alive by feeding and walking. Players can start by adding name of pets and then press 'grow up', 'feed me' or 'walk me' buttons to look after the pet. The pet's name appears as well as whether the pet is hungry, needs walking or is not alive. The pet's status is also as meter bars. When the pet dies, a new name of pet can be entered and the game begins.  
 
 
-```bash
-XXXXXX
-```
+## Technologies and languages
 
-## Features
+- JavaScript
+- HTML
+- CSS 
+- Jest
+- Node.js
+- Node Package Manager (npm)
+- Git & GitHub
 
-You can give them a name
 
-They can get older 
+## Author
 
-As they get older, they get hungrier and less fit
-
-You can walk your pet to increase it's fitness. 🏃‍♂️
-
-You can feed your pet to decrease it's hunger. 🍕
-
-You can talk to your pet to see if it needs feeding or walking
-
-If your pet gets too hungry or unfit, it will DIE 💀
-
-If your pet gets to 30 days old it will DIE 😢
+👤 **HJ Kang** [@cocomarine](https://github.com/cocomarine)
