@@ -1,6 +1,15 @@
 
 const Pet = require("../src/pet");
 
+const HUNGER_INCREMENT = 5;
+const HUNGER_DECREMENT = 3;
+const FITNESS_INCREMENT = 4;
+const FITNESS_DECREMENT = 3;
+
+const MAXIMUM_HUNGER = 10;
+const MAXIMUM_FITNESS = 10;
+const MAXIMUM_AGE = 30;
+
 describe('Pet', () => {
     let pet;
 
@@ -36,10 +45,7 @@ describe('growUp, walk, feed, checkUp, isAlive, adoptChild and haveBaby', () => 
     let currentAge;
     let currentHunger;
     let currentFitness;
-    const MINIMUM_HUNGER = 0;
-    const MAXIMUM_AGE = 30;
-    const MAXIMUM_FITNESS = 10;
- 
+
     beforeEach(() => {
         pet = new Pet('Fido');
     });
@@ -48,23 +54,27 @@ describe('growUp, walk, feed, checkUp, isAlive, adoptChild and haveBaby', () => 
         it('growUp increase the age by 1', () => {   
             currentAge = pet.age;
             pet.growUp();
+
             expect(pet.age).toEqual(currentAge + 1);
         });  
         
         it('growUp increase the hunger by 5', () => {
             currentHunger = pet.hunger;
             pet.growUp();
-            expect(pet.hunger).toEqual(currentHunger + 5);
+
+            expect(pet.hunger).toEqual(currentHunger + HUNGER_INCREMENT);
         });
         
         it('decrease the fitness by 3', () => {
             currentFitness = pet.fitness;
             pet.growUp();
-            expect(pet.fitness).toEqual(currentFitness - 3);
+
+            expect(pet.fitness).toEqual(currentFitness - FITNESS_DECREMENT);
         });
         
         it('throw an error if the pet is not alive', () => {
-            pet.age = 30;
+            pet.age = MAXIMUM_AGE;
+
             expect(() => pet.growUp()).toThrow('Your pet is no longer alive :(');
         }); 
     });
@@ -74,7 +84,7 @@ describe('growUp, walk, feed, checkUp, isAlive, adoptChild and haveBaby', () => 
             currentFitness = pet.fitness = 2;
             pet.walk();
             
-            expect(pet.fitness).toEqual(currentFitness + 4);
+            expect(pet.fitness).toEqual(currentFitness + FITNESS_INCREMENT);
         });
         
         it('increase the fitness to maximum of 10', () => {
@@ -95,14 +105,14 @@ describe('growUp, walk, feed, checkUp, isAlive, adoptChild and haveBaby', () => 
             currentHunger = pet.hunger = 5;
             pet.feed();
             
-            expect(pet.hunger).toEqual(currentHunger - 3);
+            expect(pet.hunger).toEqual(currentHunger - HUNGER_DECREMENT);
         });
     
         it('decrease the hunger level to minimum of 0', () => {
             pet.hunger = 2;
             pet.feed();
     
-            expect(pet.hunger).toEqual(MINIMUM_HUNGER);
+            expect(pet.hunger).toEqual(0);
         });
     
         it('throws an error if the pet is not alive', () => {
@@ -153,6 +163,7 @@ describe('growUp, walk, feed, checkUp, isAlive, adoptChild and haveBaby', () => 
     
         it('throws an error if the pet is not alive', () => {
             pet.age = MAXIMUM_AGE;
+
             expect(pet.checkUp()).toBe('Your pet is no longer alive :(');
         });
         
@@ -199,38 +210,41 @@ describe('growUp, walk, feed, checkUp, isAlive, adoptChild and haveBaby', () => 
         it('adopt a child with children property of array', () => {
             pet.adoptChild(child1);
 
-            expect(pet.children).toEqual([ { name: 'Happy', age: 0, hunger: 0, fitness: 10, children: [] } ]);
+            expect(pet.children).toEqual([
+                 { name: 'Happy', age: 0, hunger: 0, fitness: 10, children: [] } 
+            ]);
         });
 
         it('using growUp on first child', () => {
             child1.growUp();
 
-            expect(child1).toEqual({ name: 'Happy', age: 1, hunger: 5, fitness: 7, children: [] });
+            expect(child1).toEqual(
+                { name: 'Happy', age: 1, hunger: 5, fitness: 7, children: [] }
+            );
         });
 
         it('walking child increases its fitness by 4', () => {
             currentFitness = child1.fitness = 2;
             child1.walk();
 
-            expect(child1.fitness).toEqual(currentFitness + 4);
+            expect(child1.fitness).toEqual(currentFitness + FITNESS_INCREMENT);
         });
 
         it('feeding child decreases its hunger by 3', () => {
             currentHunger = child1.hunger = 7;
             child1.feed();
 
-            expect(child1.hunger).toEqual(currentHunger - 3);
+            expect(child1.hunger).toEqual(currentHunger - HUNGER_DECREMENT);
         });
 
         it('adopt two children', () => {
             pet.adoptChild(child1);
             pet.adoptChild(child2);
 
-            expect(pet.children).toEqual(
-                [ 
+            expect(pet.children).toEqual([ 
                     { name: 'Happy', age: 1, hunger: 4, fitness: 6, children: [] },
                     { name: 'Doory', age: 0, hunger: 0, fitness: 10, children: [] }
-                ]);
+            ]);
         });
 
         it('when a dead pet adopts a child, throw an error', () => {
@@ -246,25 +260,28 @@ describe('growUp, walk, feed, checkUp, isAlive, adoptChild and haveBaby', () => 
         it('create a baby object inside pet', () => {
             pet.haveBaby('Happy');
     
-            expect(pet.children).toEqual([ { name: 'Happy', age: 0, hunger: 0, fitness: 10, children: [] } ]);
+            expect(pet.children).toEqual([ 
+                { name: 'Happy', age: 0, hunger: 0, fitness: 10, children: [] } 
+            ]);
         });
     
         it('create two baby objects inside pet', () => {
+            pet.haveBaby('Happy');
             pet.haveBaby('Doory');
-            pet.haveBaby('Nyangi');
     
-            expect(pet.children).toEqual(
-                [ 
-                    { name: 'Doory', age: 0, hunger: 0, fitness: 10, children: [] },
-                    { name: 'Nyangi', age: 0, hunger: 0, fitness: 10, children: [] } 
+            expect(pet.children).toEqual([ 
+                    { name: 'Happy', age: 0, hunger: 0, fitness: 10, children: [] },
+                    { name: 'Doory', age: 0, hunger: 0, fitness: 10, children: [] } 
                 ]);
         });
     
-        it('increase Happy\'s age by 1', () => {
+        it("increase Happy's age by 1", () => {
             pet.haveBaby('Happy');
             pet.children[0].growUp();
     
-            expect(pet.children[0]).toEqual({ name: 'Happy', age: 1, hunger: 5, fitness: 7, children: [] });
+            expect(pet.children[0]).toEqual(
+                { name: 'Happy', age: 1, hunger: 5, fitness: 7, children: [] }
+            );
         });
     
         it('walking child increases its fitness by 4', () => {
@@ -272,7 +289,7 @@ describe('growUp, walk, feed, checkUp, isAlive, adoptChild and haveBaby', () => 
             currentFitness = pet.children[0].fitness = 2;
             pet.children[0].walk();
 
-            expect(pet.children[0].fitness).toEqual(currentFitness + 4);
+            expect(pet.children[0].fitness).toEqual(currentFitness + FITNESS_INCREMENT);
         });
 
         it('feeding child decreases its hunger by 3', () => {
@@ -280,7 +297,7 @@ describe('growUp, walk, feed, checkUp, isAlive, adoptChild and haveBaby', () => 
             currentHunger = pet.children[0].hunger = 7;
             pet.children[0].feed();
 
-            expect(pet.children[0].hunger).toEqual(currentHunger - 3);
+            expect(pet.children[0].hunger).toEqual(currentHunger - HUNGER_DECREMENT);
         });
     
         it('when a dead pet adopts a child, throw an error', () => {
