@@ -7,7 +7,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background-color: #EF6D6D;
+    background-color: #fffff0;
     display: flex;
     min-height: 100vh;
     align-items: center;
@@ -20,7 +20,7 @@ body {
     margin: 0 auto;
     border-radius: 2rem;
     position: relative;
-    background: white;
+    background: #f3e8ff;
     overflow: hidden;
     z-index: 1;
     box-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
@@ -30,12 +30,12 @@ h1 {
     width: calc(100% + 4rem);
     margin: -2rem 0 2rem -2rem;
     padding: .5rem;
-    background: #573391;
+    background: #ffc1cc;
     text-align: center;
     font-size: 3rem;
     font-weight: 100;
     font-family: 'Jua', sans-serif;
-    text-shadow: 3px 3px 0 #EF6D6D;
+    text-shadow: 3px 3px 0 #938b8b;
 }
 
 .name {
@@ -87,8 +87,8 @@ h1 {
 }
 
 button {
-    background: #ffc600;
-    border: 2px solid #F3C010;
+    background: #cbaacb;
+    border: 2px solid #a89ca3;
     width: 20%;
     float: left; 
     cursor: pointer;
